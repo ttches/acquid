@@ -1,4 +1,15 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
+
+const StyledInput = styled.input`
+  border: 1px solid #000;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 16px;
+  width: 320px;
+  font-weight: 700;
+  color: darkorange;
+`;
 
 const Input = () => {
   const [value, setValue] = useState("");
@@ -31,15 +42,14 @@ const Input = () => {
   };
 
   return (
-    <input
-      onChange={handleInputChange}
-      value={value}
-      onFocus={handleInputClick}
-    />
+    <div>
+      <StyledInput
+        onChange={handleInputChange}
+        value={value}
+        onFocus={handleInputClick}
+      />
+    </div>
   );
 };
 
 export default Input;
-// 0a9d470a-3fe3-4c2e-b336-1b49bef2aaf8
-// 0a9d470a-3fe3-4c2e-b336-1b49bef2aaf8
-// ACQ0a9d470a3fe34c2eb3361b49bef2aaf8
