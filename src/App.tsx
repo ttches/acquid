@@ -1,11 +1,12 @@
 import "./App.css";
+import AppProviders from "./AppProviders";
 import Input from "./components/Input";
 
 function App() {
   return (
-    <>
+    <AppProviders>
       <Input />
-    </>
+    </AppProviders>
   );
 }
 
