@@ -1,15 +1,19 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 
-// const StyledInput = styled.input`
-//   border: 1px solid #000;
-//   border-radius: 4px;
-//   font-size: 16px;
-//   padding: 16px;
-//   width: 320px;
-//   font-weight: 700;
-//   color: darkorange;
-// `;
+const Value = styled.div`
+  border: 1px solid darkorange;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 24px;
+  font-weight: 700;
+  color: darkorange;
+  margin-bottom: 32px;
+
+  &.hidden {
+    visibility: hidden;
+  }
+`;
 
 const isUuid = (str: string) =>
   str.match(/[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}/gim);
@@ -23,6 +27,8 @@ const Button = () => {
     );
 
   useEffect(() => {
+    if (!value) return;
+
     navigator.clipboard.writeText(value);
   }, [value]);
 
@@ -53,7 +59,7 @@ const Button = () => {
 
   return (
     <div>
-      <div>{value}</div>
+      <Value className={value ? "" : "hidden"}>{value}</Value>
       <button onClick={handleButtonClick} value={value}>
         Convert
       </button>
