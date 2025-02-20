@@ -1,11 +1,11 @@
 import "./App.css";
 import AppProviders from "./AppProviders";
-import Input from "./components/Input";
+import Button from "./components/Button";
 
 function App() {
   return (
     <AppProviders>
-      <Input />
+      <Button />
     </AppProviders>
   );
 }
